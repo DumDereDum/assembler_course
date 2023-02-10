@@ -1,10 +1,10 @@
-*.com
-*.exe
-*.lst
+.com
+.exe
+.lst
 
-*.COM
-*.EXE
-*.LST
+.COM
+.EXE
+.LST
 
 makecom.bat
 TASM.EXE
