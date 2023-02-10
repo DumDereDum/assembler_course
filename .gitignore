@@ -1,0 +1,12 @@
+*.com
+*.exe
+*.lst
+
+*.COM
+*.EXE
+*.LST
+
+makecom.bat
+TASM.EXE
+TD.EXE
+TLINK.EXE
