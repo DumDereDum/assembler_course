@@ -1,0 +1,71 @@
+In computer programming, assembly language (or assembler language,[1] or symbolic machine code[2][3][4]), often referred to simply as Assembly and commonly abbreviated as ASM or asm, is any low-level programming language with a very strong correspondence between the instructions in the language and the architecture's machine code instructions.[5] Assembly language usually has one statement per machine instruction (1:1), but constants, comments, assembler directives,[6] symbolic labels of, e.g., memory locations, registers, and macros[7][1] are generally also supported.
+
+The first assembly code in which a language is used to represent machine code instructions is found in Kathleen and Andrew Donald Booth's 1947 work, Coding for A.R.C..[8] Assembly code is converted into executable machine code by a utility program referred to as an assembler. The term "assembler" is generally attributed to Wilkes, Wheeler and Gill in their 1951 book The Preparation of Programs for an Electronic Digital Computer,[9] who, however, used the term to mean "a program that assembles another program consisting of several sections into a single program".[10] The conversion process is referred to as assembly, as in assembling the source code. The computational step when an assembler is processing a program is called assembly time.
+
+Because assembly depends on the machine code instructions, each assembly language[nb 1] is specific to a particular computer architecture.[11][12][13]
+
+Sometimes there is more than one assembler for the same architecture, and sometimes an assembler is specific to an operating system or to particular operating systems. Most assembly languages do not provide specific syntax for operating system calls, and most assembly languages can be used universally with any operating system,[nb 2] as the language provides access to all the real capabilities of the processor, upon which all system call mechanisms ultimately rest. In contrast to assembly languages, most high-level programming languages are generally portable across multiple architectures but require interpreting or compiling, much more complicated tasks than assembling.
+
+In the first decades of computing, it was commonplace for both systems programming and application programming to take place entirely in assembly language. While still irreplaceable for some purposes, the majority of programming is now conducted in higher-level interpreted and compiled languages. In "No Silver Bullet", Fred Brooks summarised the effects of the switch away from assembly language programming: "Surely the most powerful stroke for software productivity, reliability, and simplicity has been the progressive use of high-level languages for programming. Most observers credit that development with at least a factor of five in productivity, and with concomitant gains in reliability, simplicity, and comprehensibility."[14]
+
+Today, it is typical to use small amounts of assembly language code within larger systems implemented in a higher-level language, for performance reasons or to interact directly with hardware in ways unsupported by the higher-level language. For instance, just under 2% of version 4.9 of the Linux kernel source code is written in assembly; more than 97% is written in C.[15]
+Assembly language syntax
+
+Assembly language uses a mnemonic to represent, e.g., each low-level machine instruction or opcode, each directive, typically also each architectural register, flag, etc. Some of the mnemonics may be built in and some user defined. Many operations require one or more operands in order to form a complete instruction. Most assemblers permit named constants, registers, and labels for program and memory locations, and can calculate expressions for operands. Thus, programmers are freed from tedious repetitive calculations and assembler programs are much more readable than machine code. Depending on the architecture, these elements may also be combined for specific instructions or addressing modes using offsets or other data as well as fixed addresses. Many assemblers offer additional mechanisms to facilitate program development, to control the assembly process, and to aid debugging.
+
+Some are column oriented, with specific fields in specific columns; this was very common for machines using punched cards in the 1950s and early 1960s. Some assemblers have free-form syntax, with fields separated by delimiters, e.g., punctuation, white space. Some assemblers are hybrid, with, e.g., labels, in a specific column and other fields separated by delimiters; this became more common than column oriented syntax in the 1960s.
+IBM System/360
+
+All of the IBM assemblers for System/360, by default, have a label in column 1, fields separated by delimiters in columns 2-71, a continuation indicator in column 72 and a sequence number in columns 73-80. The delimiter for label, opcode, operands and comments is spaces, while individual operands are separated by commas and parentheses.
+Terminology
+
+    A macro assembler is an assembler that includes a macroinstruction facility so that (parameterized) assembly language text can be represented by a name, and that name can be used to insert the expanded text into other code.
+        Open code refers to any assembler input outside of a macro definition.
+    A cross assembler (see also cross compiler) is an assembler that is run on a computer or operating system (the host system) of a different type from the system on which the resulting code is to run (the target system). Cross-assembling facilitates the development of programs for systems that do not have the resources to support software development, such as an embedded system or a microcontroller. In such a case, the resulting object code must be transferred to the target system, via read-only memory (ROM, EPROM, etc.), a programmer (when the read-only memory is integrated in the device, as in microcontrollers), or a data link using either an exact bit-by-bit copy of the object code or a text-based representation of that code (such as Intel hex or Motorola S-record).
+    A high-level assembler is a program that provides language abstractions more often associated with high-level languages, such as advanced control structures (IF/THEN/ELSE, DO CASE, etc.) and high-level abstract data types, including structures/records, unions, classes, and sets.
+    A microassembler is a program that helps prepare a microprogram, called firmware, to control the low level operation of a computer.
+    A meta-assembler is "a program that accepts the syntactic and semantic description of an assembly language, and generates an assembler for that language",[16] or that accepts an assembler source file along with such a description and assembles the source file in accordance with that description. "Meta-Symbol" assemblers for the SDS 9 Series and SDS Sigma series of computers are meta-assemblers.[17][nb 3] Sperry Univac also provided a Meta-Assembler for the UNIVAC 1100/2200 series.[18]
+    inline assembler (or embedded assembler) is assembler code contained within a high-level language program.[19] This is most often used in systems programs which need direct access to the hardware.
+
+Key concepts
+Assembler
+
+An assembler program creates object code by translating combinations of mnemonics and syntax for operations and addressing modes into their numerical equivalents. This representation typically includes an operation code ("opcode") as well as other control bits and data. The assembler also calculates constant expressions and resolves symbolic names for memory locations and other entities.[20] The use of symbolic references is a key feature of assemblers, saving tedious calculations and manual address updates after program modifications. Most assemblers also include macro facilities for performing textual substitution – e.g., to generate common short sequences of instructions as inline, instead of called subroutines.
+
+Some assemblers may also be able to perform some simple types of instruction set-specific optimizations. One concrete example of this may be the ubiquitous x86 assemblers from various vendors. Called jump-sizing,[20] most of them are able to perform jump-instruction replacements (long jumps replaced by short or relative jumps) in any number of passes, on request. Others may even do simple rearrangement or insertion of instructions, such as some assemblers for RISC architectures that can help optimize a sensible instruction scheduling to exploit the CPU pipeline as efficiently as possible.[21]
+
+Assemblers have been available since the 1950s, as the first step above machine language and before high-level programming languages such as Fortran, Algol, COBOL and Lisp. There have also been several classes of translators and semi-automatic code generators with properties similar to both assembly and high-level languages, with Speedcode as perhaps one of the better-known examples.
+
+There may be several assemblers with different syntax for a particular CPU or instruction set architecture. For instance, an instruction to add memory data to a register in a x86-family processor might be add eax,[ebx], in original Intel syntax, whereas this would be written addl (%ebx),%eax in the AT&T syntax used by the GNU Assembler. Despite different appearances, different syntactic forms generally generate the same numeric machine code. A single assembler may also have different modes in order to support variations in syntactic forms as well as their exact semantic interpretations (such as FASM-syntax, TASM-syntax, ideal mode, etc., in the special case of x86 assembly programming).
+Number of passes
+
+There are two types of assemblers based on how many passes through the source are needed (how many times the assembler reads the source) to produce the object file.
+
+    One-pass assemblers process the source code once. For symbols used before they are defined, the assembler will emit "errata" after the eventual definition, telling the linker or the loader to patch the locations where the as yet undefined symbols had been used.
+    Multi-pass assemblers create a table with all symbols and their values in the first passes, then use the table in later passes to generate code.
+
+In both cases, the assembler must be able to determine the size of each instruction on the initial passes in order to calculate the addresses of subsequent symbols. This means that if the size of an operation referring to an operand defined later depends on the type or distance of the operand, the assembler will make a pessimistic estimate when first encountering the operation, and if necessary, pad it with one or more "no-operation" instructions in a later pass or the errata. In an assembler with peephole optimization, addresses may be recalculated between passes to allow replacing pessimistic code with code tailored to the exact distance from the target.
+
+The original reason for the use of one-pass assemblers was memory size and speed of assembly – often a second pass would require storing the symbol table in memory (to handle forward references), rewinding and rereading the program source on tape, or rereading a deck of cards or punched paper tape. Later computers with much larger memories (especially disc storage), had the space to perform all necessary processing without such re-reading. The advantage of the multi-pass assembler is that the absence of errata makes the linking process (or the program load if the assembler directly produces executable code) faster.[22]
+
+Example: in the following code snippet, a one-pass assembler would be able to determine the address of the backward reference BKWD when assembling statement S2, but would not be able to determine the address of the forward reference FWD when assembling the branch statement S1; indeed, FWD may be undefined. A two-pass assembler would determine both addresses in pass 1, so they would be known when generating code in pass 2.
+
+S1   B    FWD
+  ...
+FWD   EQU *
+  ...
+BKWD  EQU *
+  ...
+S2    B   BKWD
+
+High-level assemblers
+
+More sophisticated high-level assemblers provide language abstractions such as:
+
+    High-level procedure/function declarations and invocations
+    Advanced control structures (IF/THEN/ELSE, SWITCH)
+    High-level abstract data types, including structures/records, unions, classes, and sets
+    Sophisticated macro processing (although available on ordinary assemblers since the late 1950s for, e.g., the IBM 700 series and IBM 7000 series, and since the 1960s for IBM System/360 (S/360), amongst other machines)
+    Object-oriented programming features such as classes, objects, abstraction, polymorphism, and inheritance[23]
+
+See Language design below for more details. 
