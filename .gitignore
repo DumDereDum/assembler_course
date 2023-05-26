@@ -14,7 +14,6 @@
 *.out
 *.gdb
 
-makecom.bat
 TASM.EXE
 TD.EXE
 TLINK.EXE
