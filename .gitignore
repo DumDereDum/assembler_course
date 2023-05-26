@@ -1,12 +1,20 @@
-.com
-.exe
-.lst
+*.com
+*.exe
+*.lst
+*.MAP
 
-.COM
-.EXE
-.LST
+*.COM
+*.EXE
+*.LST
+*.MAP
+*.OBJ
+
+*.list
+*.o
+*.out
 
 makecom.bat
 TASM.EXE
 TD.EXE
 TLINK.EXE
+
