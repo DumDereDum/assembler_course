@@ -1,17 +1,17 @@
 ;=====================================================================
-%macro print_letter 1
+print_letter macro letter
     push AX
     push DX
     
-    mov DL, %1
+    mov DL, letter
     mov AH, 02
     int 21h
     
     pop DX
     pop AX
-%endmacro 
+endm
 ;=====================================================================
-%macro start_new_line 0
+start_new_line macro
     push AX
     push DX
     
@@ -24,9 +24,9 @@
     
     pop DX
     pop AX
-%endmacro 
+endm
 ;=====================================================================
-%macro print_mes 1
+print_mes macro message
 local msg, nxt
     push AX
     push DX
@@ -39,25 +39,25 @@ local msg, nxt
     pop AX
 
     jmp nxt
-    msg DB %1,'$'
+    msg DB message,'$'
     nxt:
-%endmacro 
+endm
 ;=====================================================================
-%macro print_mes1 1
+print_mes1 macro message
 
     push AX
     push DX
 
-    mov DX, offset %1
+    mov DX, offset message
     mov AH, 09h
     int 21h
 
     pop DX
     pop AX
 
-%endmacro 
+endm
 ;=====================================================================
-%macro rand_dx_9 0
+rand_dx_9 macro
 
     push AX
     push CX
@@ -73,5 +73,5 @@ local msg, nxt
     pop CX
     pop AX
 
-%endmacro 
+endm
 ;=====================================================================
