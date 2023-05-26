@@ -33,6 +33,9 @@
 
 [lesson_07/code_1](https://github.com/DumDereDum/assembler_cource/tree/main/lesson_07/code_1.asm) - resident keyboard click handler, print smth after pressing `esc` (example of int10h)
 
+[lesson_08/code_1](https://github.com/DumDereDum/assembler_cource/blob/main/lesson_08/code_1.asm) - example of TSR (resident) programm
+
+
 ### Home(Class)Works
 1. Merge two codes: [lesson_03/code_1](https://github.com/DumDereDum/assembler_cource/tree/main/lesson_03/code_1.asm) and [lesson_04/code_1](https://github.com/DumDereDum/assembler_cource/tree/main/lesson_04/code_1.asm), that means that you are able to write file name and check is it avaliable. !NB Prohibit to use [lesson_04/code_2](https://github.com/DumDereDum/assembler_cource/tree/main/lesson_04/code_2.asm)
 2. Make your own PSP print
@@ -53,6 +56,34 @@
 
 ### Desription:
 
+[lesson_09/code_1](https://github.com/DumDereDum/assembler_cource/blob/main/lesson_09/code_1.asm) - 1st example of work with include file
+
+[lesson_09/code_2](https://github.com/DumDereDum/assembler_cource/blob/main/lesson_09/code_2.asm) - 2st example of work with include file
+
+[lesson_09/macrolib](https://github.com/DumDereDum/assembler_cource/blob/main/lesson_09/macrolib.asm) - example of include file
+
+[lesson_10/code_1](https://github.com/DumDereDum/assembler_cource/blob/main/lesson_10/code_1.asm) - find files in dir by simple regular expression
+
+[lesson_10/code_2](https://github.com/DumDereDum/assembler_cource/blob/main/lesson_10/code_2.asm) - base example of work with nasm
+
+[lesson_11/code_1](https://github.com/DumDereDum/assembler_cource/blob/main/lesson_11/code_1.asm) - print RBX register
+
+[lesson_12/main.c](https://github.com/DumDereDum/assembler_cource/blob/main/lesson_12/main.c) - examples of assempler inplaces in C language
+
+[lesson_13/code_1](https://github.com/DumDereDum/assembler_cource/blob/main/lesson_13/code_1.asm) - print of [text.txt](https://github.com/DumDereDum/assembler_cource/blob/main/lesson_13/text.txt) file
+
 
 ### Home(Class)Works
 
+1. Take any code and separete:
+* macro in file `code_macro.asm` 
+* proc in file `code_proc.asm` 
+* data in file `code_data.asm`
+
+And then include them all in file `main.asm` and it should work :)
+
+2. Change code [lesson_11/code_1](https://github.com/DumDereDum/assembler_cource/blob/main/lesson_11/code_1.asm) for new way of print old: `111100002222EEEE...` -> new: `1111 0000 2222 EEEE ...`, so you should separate every 4 bytes
+
+3. ( ͡° ͜ʖ ͡°)
+
+4. Change code [lesson_13/code_1](https://github.com/DumDereDum/assembler_cource/blob/main/lesson_13/code_1.asm) for writing data from file to new file (name of this file could be hardcode)
