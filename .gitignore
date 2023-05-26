@@ -12,6 +12,7 @@
 *.list
 *.o
 *.out
+*.gdb
 
 makecom.bat
 TASM.EXE

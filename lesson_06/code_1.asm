@@ -169,12 +169,12 @@ start:
 ;block for replacement
 ;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         mov AH, 09h
-        mov DX, offset bufin
+        mov DX, offset buff_test
         int 21h
 ;<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     read_key:
         xor AX, AX
-        mov AH, 06h
+        mov AH, 01h
         int 21h
         cmp AL, 1Bh ; ESC key
         je  _end
@@ -241,6 +241,7 @@ print_reg_BX endp
     RealWrite   DW ?
     buffer_len  EQU 2048    ; try 5 instead of 2048
     bufin       DB buffer_len dup (?), "$" ; max 20Kb
+    buff_test   DB "123456789A123456789A123456789A123456789A123456789A123456789A123456789A123456789A$"
     FileName    DB 14,0,14 dup (0)
 ;=====================================================================
 code_seg ends
