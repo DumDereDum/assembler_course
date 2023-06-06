@@ -87,3 +87,9 @@ And then include them all in file `main.asm` and it should work :)
 3. ( ͡° ͜ʖ ͡°)
 
 4. Change code [lesson_13/code_1](https://github.com/DumDereDum/assembler_cource/blob/main/lesson_13/code_1.asm) for writing data from file to new file (name of this file could be hardcode)
+
+5. Make code on nasm, which add float number. !NB Prohibit to use `fadd` and similar fuctions
+
+6. Take [snake game](https://github.com/NikitaIvanovV/snake-asm) and make changes:
+* remove tail of snake, keep only head
+* remove sliding, so after press `WASD` snake make only one movement
