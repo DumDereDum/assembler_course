@@ -15,10 +15,10 @@ main:
     ;mov dword [num11], ebx
 _num11:
     ; load pi into st(0)
-    fldpi
-    ;fld dword [num11]
-    ;fld dword [num2]
-    ;fadd
+    ;fldpi
+    fld dword [num11]
+    fld dword [num2]
+    fadd
     
     ; prepare some space on the stack
     sub   esp, 8
