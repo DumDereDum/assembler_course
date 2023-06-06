@@ -72,6 +72,7 @@
 
 [lesson_13/code_1](https://github.com/DumDereDum/assembler_cource/blob/main/lesson_13/code_1.asm) - print of [text.txt](https://github.com/DumDereDum/assembler_cource/blob/main/lesson_13/text.txt) file
 
+[lesson_14/code_1](https://github.com/DumDereDum/assembler_cource/blob/main/lesson_14/code_1.asm) - print of float number
 
 ### Home(Class)Works
 
